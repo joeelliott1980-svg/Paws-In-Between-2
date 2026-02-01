@@ -1,0 +1,7 @@
+{
+  "name": "Paws In Between By Natural Intelligence Works, Llc",
+  "description": "Upload a photo of a cat or other animal to get an AI-powered analysis and recommendations for a suitable temporary home environment.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
