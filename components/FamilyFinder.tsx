@@ -31,11 +31,10 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose, onSubmit, 
     const handleSubmit = (e: FormEvent) => {
         e.preventDefault();
         if (!formData.name || !formData.email || !formData.message) {
-            // Basic validation
             return;
         }
         onSubmit(formData);
-        setFormData({ name: '', email: '', message: '' }); // Reset form
+        setFormData({ name: '', email: '', message: '' });
     };
 
     return (
@@ -145,7 +144,7 @@ const HostCard: React.FC<HostCardProps> = ({ host, onContact, species, distance,
     const [isGenerating, setIsGenerating] = useState(false);
     const [generationError, setGenerationError] = useState<string | null>(null);
 
-    const shareText = `Check out this wonderful pet host I found on Pet Pal Locator: ${host.name}! "${host.bio}" #PetPalLocator #PetSitter`;
+    const shareText = `Check out this wonderful pet host I found on Paws In Between: ${host.name}! "${host.bio}" #PawsInBetween #PetSitter`;
     const encodedText = encodeURIComponent(shareText);
     const appUrl = "https://aistudio.google.com/";
     const encodedUrl = encodeURIComponent(appUrl);
@@ -164,7 +163,6 @@ const HostCard: React.FC<HostCardProps> = ({ host, onContact, species, distance,
         onContact(host);
         setContacted(true);
         setIsModalOpen(false);
-        console.log("Simulating message send with data:", formData);
     };
 
     const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -212,17 +210,6 @@ const HostCard: React.FC<HostCardProps> = ({ host, onContact, species, distance,
             default:
                 return 'bg-slate-100 text-slate-500 dark:bg-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-500';
         }
-    };
-
-    const getSpeciesIcon = (speciesName: string) => {
-        const lowerSpecies = speciesName.toLowerCase();
-        if (lowerSpecies.includes('cat')) {
-          return <CatIcon className="w-5 h-5 text-indigo-500 dark:text-indigo-400"/>;
-        }
-        if (lowerSpecies.includes('dog')) {
-          return <DogIcon className="w-5 h-5 text-indigo-500 dark:text-indigo-400"/>;
-        }
-        return <TagIcon className="w-5 h-5 text-indigo-500 dark:text-indigo-400"/>;
     };
 
     return (
@@ -325,52 +312,6 @@ const HostCard: React.FC<HostCardProps> = ({ host, onContact, species, distance,
                                 </p>
                             )}
                         </div>
-                        {host.servicesOffered && host.servicesOffered.length > 0 && (
-                            <div className="pl-2 border-l-2 border-slate-200 dark:border-slate-600 ml-2 text-slate-500 dark:text-slate-400 mt-1">
-                                <p className="text-xs italic mb-1">Services offered:</p>
-                                <ul className="space-y-1">
-                                    {host.servicesOffered.map((item, idx) => (
-                                        <li key={idx} className="flex items-center gap-2 text-xs">
-                                            <CheckCircleIcon className="w-4 h-4 text-green-500 flex-shrink-0" />
-                                            <span>{item}</span>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                        )}
-                    </div>
-
-                    <div className="pt-3 border-t border-slate-200 dark:border-slate-600">
-                        <button
-                            onClick={() => setShowProcess(!showProcess)}
-                            className="text-sm font-semibold text-indigo-600 dark:text-indigo-300 hover:underline"
-                        >
-                            {showProcess ? 'Hide' : 'Show'} Booking Process
-                        </button>
-                        {showProcess && (
-                            <div className="mt-3 space-y-4 p-3 bg-slate-100 dark:bg-slate-700 rounded-md">
-                            <BookingStep 
-                                    icon={<DocumentIcon />}
-                                    title="1. Send Inquiry"
-                                    description="Submit a simple online form to express your interest."
-                            />
-                            <BookingStep 
-                                    icon={<ClockIcon />}
-                                    title="2. Host Review"
-                                    description="The host will review your request, which usually takes 1-2 business days."
-                            />
-                            <BookingStep 
-                                    icon={<HandshakeIcon />}
-                                    title="3. Meet & Greet"
-                                    description="If it's a good fit, schedule a time for you and your pet to meet the host."
-                            />
-                            <BookingStep 
-                                    icon={<CheckCircleIcon />}
-                                    title="4. Confirm & Book"
-                                    description="Finalize the details and payment to book your pet's stay!"
-                            />
-                            </div>
-                        )}
                     </div>
 
                     <div className="pt-2 flex justify-between items-center">
@@ -460,11 +401,10 @@ export const HostFinder: React.FC<HostFinderProps> = ({ analysis }) => {
   };
 
   const handleContact = (host: Host) => {
-    // This is a simulation. In a real app, this would trigger a modal or an API call.
     console.log(`Simulating contact with ${host.name} for the ${analysis.species}.`);
   };
 
-  const hostShareText = `I'm using Pet Pal Locator to find a great sitter for my ${analysis.species.toLowerCase()}! The app found some amazing potential hosts in my area. Check it out! #PetPalLocator #PetSitter`;
+  const hostShareText = `I'm using Paws In Between to find a great sitter for my ${analysis.species.toLowerCase()}! The app found some amazing potential hosts in my area. Check it out! #PawsInBetween #PetSitter`;
 
 
   return (

@@ -8,9 +8,9 @@ export const LoadingScreen: React.FC = () => {
         <LoadingCatIcon className="w-48 h-48 text-indigo-500 dark:text-indigo-400" />
       </div>
       <h1 className="text-2xl font-bold mt-6 tracking-wider">
-        Pet Pal Locator
+        Paws In Between
       </h1>
-      <p className="text-sm text-indigo-600 dark:text-indigo-400 font-medium">By Elliott Media Group</p>
+      <p className="text-sm text-indigo-600 dark:text-indigo-400 font-medium">By Natural Intelligence Works, LLC</p>
       <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">Finding animals a temporary home...</p>
     </div>
   );

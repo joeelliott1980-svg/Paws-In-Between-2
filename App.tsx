@@ -71,7 +71,6 @@ const BecomeAHost: React.FC<{onGoHome: () => void}> = ({ onGoHome }) => {
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         if (validate()) {
-            // In a real app, you'd probably send the data to a server here.
             setSubmitted(true);
         }
     };
@@ -82,7 +81,7 @@ const BecomeAHost: React.FC<{onGoHome: () => void}> = ({ onGoHome }) => {
                  <CheckCircleIcon className="w-24 h-24 text-green-500 mx-auto mb-6" />
                 <h2 className="text-2xl md:text-3xl font-bold text-slate-700 dark:text-slate-100 mb-2">Registration Complete!</h2>
                 <p className="text-slate-500 dark:text-slate-400 max-w-md mx-auto mb-8">
-                    Thank you for joining the Pet Pal Locator community. Pet owners in your area can now find your wonderful service!
+                    Thank you for joining the Paws In Between community. Pet owners in your area can now find your wonderful service!
                 </p>
                 <button
                     onClick={onGoHome}
@@ -190,9 +189,9 @@ const App: React.FC = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsAppLoading(false);
-    }, 2000); // Show loading screen for 2 seconds
+    }, 2000);
 
-    return () => clearTimeout(timer); // Cleanup on unmount
+    return () => clearTimeout(timer);
   }, []);
 
   const handleImageSelect = (file: File) => {
@@ -234,10 +233,7 @@ const App: React.FC = () => {
     try {
       const { base64Data, mimeType } = await fileToBase64(imageFile);
       const resultJsonString = await analyzeImage(base64Data, mimeType);
-      
-      // Clean up potential markdown formatting from the response
       const cleanedJsonString = resultJsonString.replace(/^```json\s*|```\s*$/g, '');
-      
       const result: Analysis = JSON.parse(cleanedJsonString);
       setAnalysis(result);
     } catch (err) {
@@ -318,7 +314,7 @@ const App: React.FC = () => {
         {renderContent()}
       </main>
       <footer className="text-center py-6 text-sm text-slate-500 dark:text-slate-400">
-        <p>Pet Pal Locator by Elliott Media Group &copy; {new Date().getFullYear()}</p>
+        <p>Paws In Between by Natural Intelligence Works, LLC &copy; {new Date().getFullYear()}</p>
       </footer>
     </div>
   );

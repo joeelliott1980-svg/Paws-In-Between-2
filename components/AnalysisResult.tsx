@@ -71,12 +71,12 @@ export const AnalysisResult: React.FC<AnalysisResultProps> = ({ analysis, isLoad
     return <TagIcon className="w-5 h-5" />;
   };
 
-  const shareText = `Just analyzed my ${species.toLowerCase()} with Pet Pal Locator!
+  const shareText = `Just analyzed my ${species.toLowerCase()} with Paws In Between!
 Breed: ${breed}
 Est. Age: ${estimatedAge}
 Mood: ${mood}
 Looking for a sitter with an ideal home: ${idealHome.environment.toLowerCase()}.
-#PetPalLocator #PetCare #PetSitter`;
+#PawsInBetween #PetCare #PetSitter`;
 
 
   return (

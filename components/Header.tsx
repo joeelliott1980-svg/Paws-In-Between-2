@@ -13,9 +13,9 @@ export const Header: React.FC<HeaderProps> = ({ onLogoClick }) => {
       <PawPrintIcon className="w-8 h-8 text-indigo-600 dark:text-indigo-400" />
       <div>
         <h1 className="text-2xl font-extrabold text-slate-800 dark:text-slate-100 tracking-tight">
-          Pet Pal Locator
+          Paws In Between
         </h1>
-        <p className="text-xs text-indigo-600 dark:text-indigo-400 -mt-1 font-medium">By Elliott Media Group</p>
+        <p className="text-xs text-indigo-600 dark:text-indigo-400 -mt-1 font-medium">By Natural Intelligence Works, LLC</p>
       </div>
     </div>
   );

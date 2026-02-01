@@ -77,7 +77,7 @@ const PROMPT_FOR_HOSTS = (analysis: Analysis, coords: GeolocationCoordinates, di
   }
   
   return `
-You are a "Pet Pal Locator" service. Your goal is to find suitable, temporary, paid pet sitters (hosts) for a pet owner.
+You are a "Paws In Between" service. Your goal is to find suitable, temporary, paid pet sitters (hosts) for a pet owner.
 Based on the provided animal analysis and the user's approximate location, generate a list of 3 to 4 *completely fictional* potential pet hosts.
 These hosts should be good matches for the animal described, and should be located within approximately ${distance} miles of the user's location.
 Pay close attention to the animal's mood to infer its energy level and socialization needs. For example, a playful and curious animal needs an active host, while a calm or cautious one needs a quiet environment.
@@ -137,7 +137,7 @@ export const findHosts = async (analysis: Analysis, coords: GeolocationCoordinat
         if (error instanceof Error) {
             throw new Error(`Gemini API Error: ${error.message}`);
         }
-        throw new Error("An unknown error occurred while contacting the Gemini API.");
+        throw new Error("An unknown error occurred while finding hosts.");
       }
 }
 
